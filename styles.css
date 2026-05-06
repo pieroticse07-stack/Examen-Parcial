@@ -1,0 +1,119 @@
+.experience-section {
+    background: linear-gradient(180deg, #6d28d9 0%, #6d28d9 58%, #ffffff 58%, #ffffff 100%);
+  }
+  
+  .experience-intro {
+    max-width: 860px;
+    color: #f3e8ff;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  
+  .experience-focus {
+    background: #ffffff;
+    border-left: 6px solid #6d28d9;
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .experience-tag,
+  .value-badge {
+    background: #6d28d9;
+    color: #fff;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  
+  .experience-card {
+    background: #f8f8fb;
+    padding: 2rem 1.5rem 1.5rem;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    min-height: 100%;
+  }
+  
+  .experience-card.active {
+    border-color: #6d28d9;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+  }
+  
+  .experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+  }
+  
+  .experience-icon {
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6d28d9;
+  }
+  
+  .experience-icon svg {
+    width: 54px;
+    height: 54px;
+  }
+  
+  .btn-purple {
+    background: #6d28d9;
+    border: 1px solid #6d28d9;
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.75rem 1rem;
+  }
+  
+  .btn-purple:hover {
+    background: #5b21b6;
+    border-color: #5b21b6;
+    color: #fff;
+  }
+  
+  .experience-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #c4b5fd;
+  }
+  
+  .experience-dot.active {
+    background: #6d28d9;
+  }
+  
+  .experience-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #c084fc;
+    background: transparent;
+    color: #6d28d9;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition: 0.2s ease;
+  }
+  
+  .experience-arrow:hover {
+    background: #6d28d9;
+    color: #fff;
+    border-color: #6d28d9;
+  }
+  
+  .value-added-box {
+    background: #fff;
+  }
+  
+  .value-item {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+  }
+  
+  @media (max-width: 991.98px) {
+    .experience-section {
+      background: #6d28d9;
+    }
+  }
