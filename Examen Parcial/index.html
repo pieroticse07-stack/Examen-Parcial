@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Rediseño Universidad Continental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Universidad Continental</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Conócenos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Carreras</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Internacional</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Investigación</a></li>
+      </ul>
+
+      <a href="#" class="btn btn-purple ms-3">Solicita información</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+
+      <!-- IZQUIERDA -->
+      <div class="col-md-6 hero-text">
+        <h1>Tu camino hacia un<br>futuro internacional</h1>
+        <p>Desarrolla habilidades tecnológicas y conecta con oportunidades globales.</p>
+        <a href="#" class="btn btn-light">Conoce más aquí</a>
+      </div>
+
+      <!-- DERECHA -->
+      <div class="col-md-6 hero-img">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" class="img-fluid">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN ESTADÍSTICA -->
+<section class="container text-center my-5">
+  <h2><strong>+100 mil estudiantes</strong> confían en nuestra calidad académica</h2>
+
+  <div class="row mt-4 align-items-center">
+    <div class="col-md-6 text-start">
+      <p>
+        Somos parte de una red internacional de educación con presencia en varios países.
+        Formamos profesionales con visión global.
+      </p>
+    </div>
+
+    <div class="col-md-6">
+      <img src="https://images.unsplash.com/photo-1588072432836-e10032774350" class="img-fluid rounded">
+    </div>
+  </div>
+</section>
+<section class="hero">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+
+      <!-- TEXTO -->
+      <div class="col-md-7 text-white p-5">
+        <h2 class="mb-4">Elige tu modalidad</h2>
+
+        <div class="d-flex gap-3">
+          <div class="modalidad active" onclick="seleccionarModalidad(this)">Presencial</div>
+          <div class="modalidad" onclick="seleccionarModalidad(this)">Semipresencial</div>
+          <div class="modalidad" onclick="seleccionarModalidad(this)">A Distancia</div>
+        </div>
+      </div>
+
+      <!-- FORMULARIO -->
+      <div class="col-md-5">
+        <div class="form-box">
+
+          <h4>Solicita información</h4>
+          <p>Tú eliges cómo estudiar</p>
+
+          <form id="formulario">
+
+            <!-- PASO 1 -->
+            <div id="paso1">
+              <input type="text" class="form-control mb-2" placeholder="Nombres" required>
+              <input type="text" class="form-control mb-2" placeholder="Apellidos" required>
+              <input type="email" class="form-control mb-2" placeholder="Correo" required>
+              <input type="text" class="form-control mb-2" placeholder="Celular" required>
+
+              <button type="button" class="btn btn-purple w-100" onclick="siguientePaso()">Siguiente</button>
+            </div>
+
+            <!-- PASO 2 -->
+            <div id="paso2" style="display:none;">
+              <input type="date" class="form-control mb-2" required>
+              <select class="form-control mb-2">
+                <option>Selecciona carrera</option>
+                <option>Ingeniería</option>
+                <option>Derecho</option>
+              </select>
+
+              <button type="submit" class="btn btn-purple w-100">Enviar</button>
+            </div>
+
+          </form>
+
+          <small id="pasoTexto">1 de 2</small>
+
+          <div id="mensaje" class="text-success mt-3"></div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="container my-5">
+
+  <h2 class="text-center mb-4">5 razones para elegir la Universidad Continental</h2>
+
+  <div class="row align-items-center">
+
+    <!-- TEXTO -->
+    <div class="col-md-6">
+      <p>
+        Hoy somos una de las mejores organizaciones de educación superior en el Perú.
+      </p>
+
+      <ol id="listaRazones">
+        <li>Experiencias formativas memorables</li>
+        <li>Liderazgo y actitud emprendedora</li>
+        <li>Propuesta educativa internacional</li>
+        <li>Aprendizaje personalizado</li>
+        <li>Empleabilidad</li>
+      </ol>
+
+      <button class="btn btn-purple" onclick="mostrarMas()">Más información</button>
+    </div>
+
+    <!-- IMAGEN -->
+    <div class="col-md-6">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" class="img-fluid rounded">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CARDS -->
+<section class="container mb-5">
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="card card-hover">
+        <img src="https://estudiantes.ucontinental.edu.pe/wp-content/uploads/2021/02/admin-finanzas-554x312.jpg" class="card-img-top">
+        <div class="card-body text-center">
+          <h6>Carreras y Modalidades</h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-hover">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" class="card-img-top">
+        <div class="card-body text-center">
+          <h6>Campus Continental</h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-hover">
+        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232" class="card-img-top">
+        <div class="card-body text-center">
+          <h6>Beneficios y Servicios</h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-hover">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" class="card-img-top">
+        <div class="card-body text-center">
+          <h6>Internacionalización</h6>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal fade" id="modalInfo">
+  <div class="modal-dialog">
+    <div class="modal-content p-4">
+      <h4>Información adicional</h4>
+      <p>La universidad ofrece programas innovadores y oportunidades internacionales.</p>
+      <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<section class="vida-section">
+
+  <div class="container caja">
+
+    <h6 class="text-center">Vida Estudiantil</h6>
+    <h2 class="text-center mb-3">Un día en la vida del estudiante</h2>
+
+    <p class="text-center">
+      Nuestros estudiantes comparten sus experiencias.
+    </p>
+
+    <div class="row align-items-center mt-4">
+
+      <!-- IMAGEN -->
+      <div class="col-md-6">
+        <img id="imagen" class="img-fluid">
+      </div>
+
+      <!-- TEXTO -->
+      <div class="col-md-6">
+
+        <p id="texto"></p>
+
+        <div class="card-autor">
+          <h5 id="nombre"></h5>
+          <small id="carrera"></small>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CONTROLES -->
+    <div class="text-center mt-4">
+      <span class="punto active" onclick="irSlide(0)"></span>
+      <span class="punto" onclick="irSlide(1)"></span>
+      <span class="punto" onclick="irSlide(2)"></span>
+    </div>
+
+    <div class="text-center mt-3">
+      <button onclick="prev()">⬅</button>
+      <button onclick="next()">➡</button>
+    </div>
+
+  </div>
+  <div class="page-background">
+        
+        <div class="content-container">
+            
+            <div class="section-header">
+                <p class="subtitle">Vida Estudiantil</p>
+                <h2 class="title">Un día en la vida del estudiante</h2>
+                <p class="description">Nuestras egresadas y egresados cuentan sus experiencias, sus actuales logros en el campo laboral y las razones por las que estudiaron sus <strong>carreras universitarias</strong> en la Universidad Continental.</p>
+            </div>
+
+            <div class="carousel-wrapper" id="testimonial-carousel">
+                
+                <div class="slide active">
+                    <div class="image-section">
+                        <img src="https://blog.ucsp.edu.pe/hs-fs/hubfs/estudiante%20universitario.jpg?width=800&height=500&name=estudiante%20universitario.jpg" alt="Estudiante en laboratorio">
+                    </div>
+                    
+                    <div class="text-section">
+                        <div class="quote-card">
+                            <p>He descubierto nuevas formas de aprendizaje gracias a salones y laboratorios de última generación que me permitieron explorar y prepararme para mi futura carrera en salud. Los docentes nos inspiran a esforzarnos para lograr nuestros objetivos académicos y humanitarios.</p>
+                        </div>
+                        
+                        <div class="author-info-wrapper">
+                            <div class="author-card">
+                                <h4>Abigail Acosta</h4>
+                                <p class="career">Estudiante de Medicina Humana</p>
+                                <p class="campus">Campus Huancayo</p>
+                            </div>
+                            <div class="decor-line top-line"></div>
+                            <div class="decor-line bottom-line"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="carousel-controls">
+                <div class="dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                </div>
+                <div class="arrows">
+                    <button class="arrow-btn" onclick="prevSlide()" aria-label="Anterior">
+                        <svg width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="#5706aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 19l-7-7 7-7"/><path d="M20 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button class="arrow-btn" onclick="nextSlide()" aria-label="Siguiente">
+                        <svg width="30" height="24" viewBox="0 0 30 24" fill="none" stroke="#5706aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 5l7 7-7 7"/><path d="M20 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="floating-chat">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16ZM7 9H17V11H7V9ZM7 12H14V14H7V12ZM7 6H17V8H7V6Z"/>
+            </svg>
+        </div>
+        
+    </div>
+
+</section>
+
+<div class="container-fluid px-lg-5">
+            
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-4 mb-4">
+                <div class="col">
+                    <h6 class="footer-heading">CAMPUS</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Campus Huancayo</a></li>
+                        <li><a href="#">Campus Arequipa</a></li>
+                        <li><a href="#">Campus Cusco</a></li>
+                        <li><a href="#">Campus Los Olivos</a></li>
+                        <li><a href="#">Campus Miraflores</a></li>
+                        <li><a href="#">Campus Ica</a></li>
+                        <li><a href="#">Campus Ayacucho</a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h6 class="footer-heading">SERVICIOS</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Growth Center Continental</a></li>
+                        <li><a href="#">Hub de información</a></li>
+                        <li><a href="#">Internacionalización</a></li>
+                        <li><a href="#">Wichay - Incubadora de Startups</a></li>
+                        <li><a href="#">Vive Continental</a></li>
+                        <li><a href="#">Investigación</a></li>
+                        <li><a href="#">Oportunidades laborales</a></li>
+                        <li><a href="#">FabLab</a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h6 class="footer-heading">INFORMACIÓN INSTITUCIONAL</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Conecta</a></li>
+                        <li><a href="#">Convocatoria docente</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Registrar denuncias por hostigamiento sexual</a></li>
+                        <li><a href="#">Repositorio Institucional</a></li>
+                        <li><a href="#">Transparencia</a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h6 class="footer-heading">PROGRAMAS</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Carreras de pregrado</a></li>
+                        <li><a href="#">Continental Florida University</a></li>
+                        <li><a href="#">Escuela de Posgrado</a></li>
+                        <li><a href="#">Instituto Continental</a></li>
+                        <li><a href="#">Centro de idiomas</a></li>
+                        <li><a href="#">Educación continua</a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h6 class="footer-heading">MÁS INFORMACIÓN</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Portal del postulante</a></li>
+                        <li><a href="#">Portal del estudiante</a></li>
+                        <li><a href="#">Portal de padres</a></li>
+                        <li><a href="#">Portal del docente</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row align-items-center pt-4 border-top border-secondary-subtle bottom-footer-row">
+                
+                <div class="col-lg-4 col-md-12 d-flex align-items-center gap-4 mb-3 mb-lg-0">
+                    <div class="powered-by">
+                        <span class="d-block text-powered">Powered by</span>
+                        <h5 class="m-0 text-secondary logo-text">
+                            <i class="fas fa-bars me-1"></i> Continental
+                        </h5>
+                        <span class="d-block text-international">International Education</span>
+                    </div>
+                    <div class="empresa-b-logo text-center">
+                        <strong>Empresa</strong><br>
+                        <span class="b-circle">B</span><br>
+                        <small>Certificada</small>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12 d-flex align-items-center justify-content-lg-center gap-3 mb-3 mb-lg-0">
+                    <div class="info-box bg-light-gray d-flex align-items-center p-3 rounded">
+                        <i class="fas fa-info-circle me-2 text-dark"></i>
+                        <p class="mb-0 text-dark small-text">
+                            Universidad Continental S.A.C.<br>R.U.C. No. 20319363221
+                        </p>
+                    </div>
+                    <div class="info-box bg-white shadow-sm d-flex flex-column align-items-center justify-content-center p-2 rounded border">
+                        <span class="text-danger fw-bold libro-text">LIBRO DE</span>
+                        <span class="text-danger fw-bold libro-text">RECLAMACIONES</span>
+                        <i class="fas fa-book-open mt-1 text-secondary"></i>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-12 text-lg-end text-md-start">
+                    <span class="d-block mb-2 text-dark text-siguenos">SÍGUENOS EN:</span>
+                    <div class="social-icons d-flex gap-3 justify-content-lg-end">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-btn float-accessibility" onclick="toggleAccessibility()">
+        <i class="fas fa-universal-access"></i>
+    </div>
+    <div class="floating-btn float-chat" onclick="openChat()">
+        <i class="fas fa-comment-alt"></i>
+    </div>
+    <div class="floating-btn float-whatsapp" onclick="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
